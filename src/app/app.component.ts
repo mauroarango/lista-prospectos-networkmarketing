@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 
-import { Autenticacion } from '../services/autenticacion/autenticacion.service';
+import { AutenticacionService } from '../services/autenticacion/autenticacion.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +18,7 @@ export class MyApp {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    private auth: Autenticacion) {
+    private auth: AutenticacionService) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

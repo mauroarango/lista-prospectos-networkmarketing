@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { /*IonicPage,*/ NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
-import { Autenticacion } from '../../services/autenticacion/autenticacion.service';
+import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
 
 //@IonicPage()
 @Component({
@@ -19,7 +19,7 @@ export class LoginPage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      public auth: Autenticacion,
+      public auth: AutenticacionService,
       public alertCtrl: AlertController
       ) {
   }

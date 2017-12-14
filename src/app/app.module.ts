@@ -20,7 +20,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { HttpModule } from '@angular/http'
 import { AgregarProspectoService } from '../services/agregar-prospecto/agregar-prospecto.service';
-import { Autenticacion } from '../services/autenticacion/autenticacion.service';
+import { AutenticacionService } from '../services/autenticacion/autenticacion.service';
+import { DatosGeneralService } from '../services/datos-general/datos-general.service';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { Autenticacion } from '../services/autenticacion/autenticacion.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgregarProspectoService,
-    Autenticacion
+    AutenticacionService,
+    DatosGeneralService
   ]
 })
 export class AppModule {}

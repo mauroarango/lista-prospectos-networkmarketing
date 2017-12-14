@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { AgregarProspectoService } from '../../services/agregar-prospecto/agregar-prospecto.service';
-import { Autenticacion } from '../../services/autenticacion/autenticacion.service';
+import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -17,7 +17,7 @@ export class ListaPage {
   constructor(
       public navCtrl: NavController,
       private aps: AgregarProspectoService,
-      private auth: Autenticacion ) {
+      private auth: AutenticacionService ) {
 
       this.auth.fnSesion.subscribe(sesion => {
         if (sesion) {
