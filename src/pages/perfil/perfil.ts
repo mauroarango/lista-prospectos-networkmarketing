@@ -17,10 +17,10 @@ import { PerfilService } from './../../services/perfil/perfil.service';
 })
 export class PerfilPage {
 
-  perfil = {
-    nombre : 'casimiro',
-    telefono : '3333'
-  }
+  // perfil = {
+  //   nombre : 'casimiro',
+  //   telefono : '3333'
+  // }
 
   constructor(
     public navCtrl: NavController, 
@@ -28,35 +28,35 @@ export class PerfilPage {
     private auth: AutenticacionService,
     private ps: PerfilService ) {
 
-      this.fnCargarPerfil();
+      // this.fnCargarPerfil();
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad PerfilPage');
   }
 
-  fnGuardaPerfil(perfil){
-    debugger;
-    this.auth.fnSesion.subscribe(sesion => {
-      if(sesion){
-        // let datos = {
-        //   k : sesion.uid,
-        //   d : perfil
-        // }
-      }
-    });
-  }
+  // fnGuardaPerfil(perfil){
+  //   debugger;
+  //   this.auth.fnSesion.subscribe(sesion => {
+  //     if(sesion){
+  //       // let datos = {
+  //       //   k : sesion.uid,
+  //       //   d : perfil
+  //       // }
+  //     }
+  //   });
+  // }
 
-  fnCargarPerfil(){
-    this.auth.fnSesion.subscribe(sesion => {
-      if(sesion){
-        debugger;
-        this.perfil = this.ps.getPerfilData(sesion.uid);
-      }
-    });
-  }
+  // fnCargarPerfil(){
+  //   this.auth.fnSesion.subscribe(sesion => {
+  //     if(sesion){
+  //       debugger;
+  //       this.perfil = this.ps.getPerfilData(sesion.uid);
+  //     }
+  //   });
+  // }
 
-  fnCerrarPerfil(){
-    this.navCtrl.getPrevious();
-  }
+  // fnCerrarPerfil(){
+  //   this.navCtrl.getPrevious();
+  // }
 }

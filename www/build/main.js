@@ -446,42 +446,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PerfilPage = (function () {
+    // perfil = {
+    //   nombre : 'casimiro',
+    //   telefono : '3333'
+    // }
     function PerfilPage(navCtrl, navParams, auth, ps) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.auth = auth;
         this.ps = ps;
-        this.perfil = {
-            nombre: 'casimiro',
-            telefono: '3333'
-        };
-        this.fnCargarPerfil();
+        // this.fnCargarPerfil();
     }
     PerfilPage.prototype.ionViewDidLoad = function () {
         //console.log('ionViewDidLoad PerfilPage');
-    };
-    PerfilPage.prototype.fnGuardaPerfil = function (perfil) {
-        debugger;
-        this.auth.fnSesion.subscribe(function (sesion) {
-            if (sesion) {
-                // let datos = {
-                //   k : sesion.uid,
-                //   d : perfil
-                // }
-            }
-        });
-    };
-    PerfilPage.prototype.fnCargarPerfil = function () {
-        var _this = this;
-        this.auth.fnSesion.subscribe(function (sesion) {
-            if (sesion) {
-                debugger;
-                _this.perfil = _this.ps.getPerfilData(sesion.uid);
-            }
-        });
-    };
-    PerfilPage.prototype.fnCerrarPerfil = function () {
-        this.navCtrl.getPrevious();
     };
     PerfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
