@@ -8,6 +8,8 @@ import { ListaPage } from '../pages/lista/lista';
 import { ProfesionesPage } from '../pages/profesiones/profesiones';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { MenuPopoverPage } from '../pages/menu-popover/menu-popover';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,7 @@ import { HttpModule } from '@angular/http'
 import { AgregarProspectoService } from '../services/agregar-prospecto/agregar-prospecto.service';
 import { AutenticacionService } from '../services/autenticacion/autenticacion.service';
 import { DatosGeneralService } from '../services/datos-general/datos-general.service';
-
+import { PerfilService } from '../services/perfil/perfil.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DatosGeneralService } from '../services/datos-general/datos-general.ser
     ListaPage,
     ProfesionesPage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    MenuPopoverPage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { DatosGeneralService } from '../services/datos-general/datos-general.ser
     ListaPage,
     ProfesionesPage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    MenuPopoverPage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
@@ -56,7 +62,8 @@ import { DatosGeneralService } from '../services/datos-general/datos-general.ser
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgregarProspectoService,
     AutenticacionService,
-    DatosGeneralService
+    DatosGeneralService,
+    PerfilService
   ]
 })
 export class AppModule {}

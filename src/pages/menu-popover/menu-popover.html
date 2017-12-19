@@ -1,18 +1,11 @@
-<!--
-  Generated template for the MenuPopoverPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>menu-popover</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <!-- <ion-list-header>Configuración</ion-list-header> -->
+    <button ion-item (click)="fnVerPerfil()">
+      <ion-icon name="person"></ion-icon> Perfil
+    </button>
+    <button ion-item (click)="fnCerrarSesion()">
+      <ion-icon name="exit"></ion-icon> Cerrar Sesión
+    </button>
+  </ion-list>
 </ion-content>

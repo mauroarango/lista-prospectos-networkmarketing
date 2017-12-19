@@ -1,86 +1,80 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      Ingresa la Persona
-    </ion-title>
+	<ion-navbar color="primary">
+		<ion-title>
+			Ingresa la Persona
+		</ion-title>
 
 		<ion-buttons end>
-      	<button ion-button icon-only (click)="fnCerrarSesion()">
-        		<ion-icon name="exit"></ion-icon>
-      	</button>
-    	</ion-buttons>
+			<button ion-button icon-only (click)="fnMenuPopover($event)">
+				<ion-icon name="more"></ion-icon>
+			</button>
+		</ion-buttons>
 
-  </ion-navbar>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<br><br><br>
+	<br>
+	<br>
+	<br>
 
-<ion-grid>
-  <ion-row>
-    <ion-col>
+	<ion-grid>
 
-		<ion-list>
-		      <ion-item>
-		        <ion-label>Nombre</ion-label>
-		        <ion-select [(ngModel)]="nuevoProspecto.nombre" interface="action-sheet">
-			    	<ion-option *ngFor="let nombre of nombres" value="{{nombre.nombre}}">
-			    	{{nombre.nombre}}
-			    </ion-option>
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+						<ion-label>Nombre</ion-label>
+						<ion-select [(ngModel)]="nuevoProspecto.nombre" interface="action-sheet">
+							<ion-option *ngFor="let nombre of nombres" value="{{nombre.nombre}}">
+								{{nombre.nombre}}
+							</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
 
-				</ion-select>
-		      </ion-item>
-		 </ion-list>
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+						<ion-label>Apellido</ion-label>
+						<ion-select [(ngModel)]="nuevoProspecto.apellido" interface="action-sheet">
+							<ion-option *ngFor="let apellido of apellidos" value="{{apellido.apellido}}">{{apellido.apellido}}
+							</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
 
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+						<ion-label>Profesion</ion-label>
+						<ion-select [(ngModel)]="nuevoProspecto.profesion" interface="action-sheet">
+							<ion-option *ngFor="let profesion of profesiones" value="{{profesion.profesion}}">{{profesion.profesion}}
+							</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
 
+	</ion-grid>
 
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col>
-
-		<ion-list>
-		      <ion-item>
-		        <ion-label>Apellido</ion-label>
-		        <ion-select [(ngModel)]="nuevoProspecto.apellido" interface="action-sheet">
-			    	<ion-option *ngFor="let apellido of apellidos" value="{{apellido.apellido}}">{{apellido.apellido}}
-			    	</ion-option>
-
-				</ion-select>
-		      </ion-item>
-		 </ion-list>
-
-
-    </ion-col>
-  </ion-row>
-
-
-<ion-row>
-    <ion-col>
-		<ion-list>
-		      <ion-item>
-		        <ion-label>Profesion</ion-label>
-		        <ion-select [(ngModel)]="nuevoProspecto.profesion" interface="action-sheet">
-				    	<ion-option *ngFor="let profesion of profesiones" value="{{profesion.profesion}}">{{profesion.profesion}}
-				   	</ion-option>
-			    </ion-select>
-		      </ion-item>
-		 </ion-list>
-    </ion-col>
-  </ion-row>
-
-
-</ion-grid>
-	
 	<ion-input type="number" placeholder="Agrega el Celular de la Persona" [(ngModel)]="nuevoProspecto.telefono">
-        <!-- (keyup.enter)="addcelular($event.target.value)" -->
+		<!-- (keyup.enter)="addcelular($event.target.value)" -->
 	</ion-input>
-	<br><br><br><br><br>
-
-	
-
-   			<button icon-start="" ion-button color="addcolor" full large  (click)="createContact(nuevoProspecto)"><ion-icon name="list-box"></ion-icon>Agregar a la Lista</button>
-
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<button icon-start="" ion-button color="addcolor" full large (click)="createContact(nuevoProspecto)">
+		<ion-icon name="list-box"></ion-icon>Agregar a la Lista
+	</button>
 	<br>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
 import { CrearPage } from '../crear/crear';
+import { MenuPopoverPage } from '../menu-popover/menu-popover';
 
 
 @Component({
@@ -9,10 +10,11 @@ import { CrearPage } from '../crear/crear';
 })
 export class ProfesionesPage {
 
-
 	items = [];
 
- 	constructor(public navCtrl: NavController)
+ 	constructor(
+    public navCtrl: NavController,
+    public popoverCtrl: PopoverController)
  				 {
 
  		this.items = [
@@ -298,6 +300,13 @@ export class ProfesionesPage {
 
   irACrearPage (item) {
     this.navCtrl.setRoot(CrearPage, { item });
+  }
+
+  fnMenuPopover(myEvent){
+    let popover = this.popoverCtrl.create(MenuPopoverPage);
+    popover.present({
+      ev : myEvent
+    });
   }
 
 }

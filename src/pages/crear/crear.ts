@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { ListaPage } from '../lista/lista';
+import { MenuPopoverPage } from '../menu-popover/menu-popover';
 import { AgregarProspectoService } from '../../services/agregar-prospecto/agregar-prospecto.service';
 import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
+import { DatosGeneralService } from '../../services/datos-general/datos-general.service';
 //import { AngularFireDatabase } from 'angularfire2/database';
 //import { Observable } from 'rxjs/Observable';
-import { LoginPage } from '../login/login';
-import { DatosGeneralService } from '../../services/datos-general/datos-general.service';
-
 
 @Component({
   selector: 'page-crear',
@@ -41,15 +40,12 @@ export class CrearPage {
     public navParams: NavParams,
     private aps: AgregarProspectoService,
     private auth: AutenticacionService,
-    private dgs: DatosGeneralService	) {
+    private dgs: DatosGeneralService,
+    public popoverCtrl: PopoverController	) {
 
       this.fnObtenerNombres();
       this.fnObtenerApellidos();
       this.fnObtenerProfesiones();
-
-      // if (this.navParams.get('item')) {
-      //   this.profesionSeleccionada = this.navParams.get('item');
-      // }
 
   	};
 
@@ -70,16 +66,11 @@ export class CrearPage {
       })
     }
 
-    fnCerrarSesion(){
-      this.auth.fnLogout();
-      this.navCtrl.setRoot(LoginPage);
-    }
-
     fnObtenerNombres(){
       this.dgs.fnLoadDataNombres()
         .subscribe(data => {
-              this.nombres = data.json();
-              this.boolNombre = true;
+            this.nombres = data.json();
+            this.boolNombre = true;
         })
     }
 
@@ -97,6 +88,13 @@ export class CrearPage {
           this.profesiones = data.json();
           this.boolProfesiones = true;
         })
+    }
+
+    fnMenuPopover(myEvent){
+      let popover = this.popoverCtrl.create(MenuPopoverPage);
+      popover.present({
+        ev : myEvent
+      });
     }
 
 }
